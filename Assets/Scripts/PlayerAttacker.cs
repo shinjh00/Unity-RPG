@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +8,15 @@ public class PlayerAttacker : MonoBehaviour
 
     private void Attack()
     {
-        animator.SetTrigger("Attack");
+        int rand = Random.Range(0, 2);
+        if (rand == 0)
+        {
+            animator.SetTrigger("Attack1");
+        }
+        else
+        {
+            animator.SetTrigger("Attack2");
+        }
     }
 
     public void EnableWeapon()
